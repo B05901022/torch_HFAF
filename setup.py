@@ -23,8 +23,8 @@ except ImportError:
 
 # Base requirements
 install_requires = [
-    "torch>=1.10.2",
-    "torchaudio>=0.10.2"
+    "torch>=1.10.0",
+    #"torchaudio>=0.10.0"
 ]
 if has_dev_pytorch:  # Remove the PyTorch requirement
     install_requires = [
@@ -35,9 +35,11 @@ setup(
     name = "torch_hfaf",
     version = "0.1.0",
     description = "PyTorch implementation of R22SDF FFT with fixed-point support",
+    long_description=open("README.md").read(),
     author = "Jui-Yang Hsu",
     author_email = "r09943025@ntu.edu.tw",
     packages = find_packages(),
     include_package_data=True,
+    python_requires=">=3.7",
     install_requires=install_requires,
     )
