@@ -1,6 +1,6 @@
 # torch_HFAF
 
-A simulation of R2\superscript{2}SDF FFT on PyTorch with fixed-point analysis capability.
+A simulation of R$2^{2}$SDF FFT on PyTorch with fixed-point analysis capability.
 
 ## Installation
 
