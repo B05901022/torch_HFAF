@@ -1,0 +1,48 @@
+enabled_modules: ["window","fft","powerspec","mel"]
+window:
+    window_func: "hann"
+    window_length: 400
+    hop_length: 160
+    n_fft: 512
+    post_window_pad_mode: "constant"
+    fxp_config:
+        INPUT: [8,7]
+        WINDOW_COEFF: [8,6]
+        WINDOW_OUT: [8,7]
+    bypass_quant: false
+    rounding_mode: "floor"
+fft:
+    n_fft: 512
+    evenodd_unpacking: true
+    rfft: true
+    pre_gain: 32
+    fxp_config:
+        WN_COEFF: [8,6]
+        STAGE1_FFTOUT: [8,6]
+        STAGE2_FFTOUT: [8,6]
+        STAGE3_FFTOUT: [8,6]
+        STAGE4_FFTOUT: [8,6]
+        STAGE5_FFTOUT: [8,2]
+        STAGE6_FFTOUT: [8,2]
+        STAGE7_FFTOUT: [8,2]
+        STAGE8_FFTOUT: [8,2]
+        EXTRA_STAGE_COEFF: [8,6]
+        FINAL_OUT: [8,0]
+    bypass_quant: false
+    rounding_mode: "floor"
+powerspec:
+    fxp_config:
+        POWER_OUT: [15,10]
+        SPECTRUM_OUT: [16,10]
+    bypass_quant: false
+    rounding_mode: "floor"
+mel:
+    n_freqs: 257
+    n_mels: 40
+    sample_rate: 16000
+    mel_scale: "htk"
+    fxp_config: 
+        MEL_COEFF: [2,0]
+        MEL_OUT: [8,7]
+    bypass_quant: false
+    rounding_mode: "floor"
